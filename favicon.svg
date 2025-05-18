@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- Main paw pad -->
+    <path d="M16 24C20 24 24 20 24 16C24 12 20 8 16 8C12 8 8 12 8 16C8 20 12 24 16 24Z" fill="#4A90E2"/>
+    <!-- Top left toe -->
+    <path d="M8 8C10 8 12 6 12 4C12 2 10 0 8 0C6 0 4 2 4 4C4 6 6 8 8 8Z" fill="#4A90E2"/>
+    <!-- Top right toe -->
+    <path d="M24 8C26 8 28 6 28 4C28 2 26 0 24 0C22 0 20 2 20 4C20 6 22 8 24 8Z" fill="#4A90E2"/>
+    <!-- Bottom left toe -->
+    <path d="M8 24C10 24 12 22 12 20C12 18 10 16 8 16C6 16 4 18 4 20C4 22 6 24 8 24Z" fill="#4A90E2"/>
+    <!-- Bottom right toe -->
+    <path d="M24 24C26 24 28 22 28 20C28 18 26 16 24 16C22 16 20 18 20 20C20 22 22 24 24 24Z" fill="#4A90E2"/>
+</svg> 
