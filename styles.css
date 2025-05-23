@@ -541,7 +541,18 @@ footer {
 /* Media Queries */
 @media (max-width: 768px) {
     .nav-links {
-        gap: 1rem;
+        display: flex;
+        gap: 0;
+    }
+
+    .nav-links li:not(:last-child) {
+        display: none;
+    }
+
+    .nav-links .cta-button {
+        margin-left: auto;
+        padding: 0.5rem 1.2rem;
+        font-size: 0.95rem;
     }
 
     nav {
