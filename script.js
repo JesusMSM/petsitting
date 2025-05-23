@@ -81,6 +81,20 @@ document.addEventListener('DOMContentLoaded', function () {
             prevSlide();
         }
     }
+
+    // Add passive event listeners for scroll events
+    document.addEventListener('scroll', function () {
+        // Your scroll handling code
+    }, { passive: true });
+
+    // Add passive event listeners for touch events
+    document.addEventListener('touchstart', function () {
+        // Your touch handling code
+    }, { passive: true });
+
+    document.addEventListener('touchmove', function () {
+        // Your touch move handling code
+    }, { passive: true });
 });
 
 function sendEmail(event) {

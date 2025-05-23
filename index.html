@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Professional pet sitting services in Russian Hill, San Francisco. Offering dog walking, house visits, and boarding for dogs and cats. Trusted local pet care with 5-star ratings.">
+    <meta name="description" content="Professional pet sitting & dog walking in Russian Hill, San Francisco. 5-star rated care for dogs & cats. Book your trusted local pet sitter today!">
     <meta name="keywords" content="pet sitting, dog walking, cat sitting, Russian Hill, San Francisco, pet boarding, house visits, professional pet care, local pet sitter, dog boarding, cat boarding">
     <meta name="author" content="Russian Hill Pet Sitting">
     <meta name="robots" content="index, follow">
@@ -11,25 +11,34 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://russianhillpetsitting.com/">
-    <meta property="og:title" content="Russian Hill Pet Sitting | Professional Pet Care Services in San Francisco">
-    <meta property="og:description" content="Trusted pet sitting services in Russian Hill, San Francisco. 5-star rated pet care for dogs and cats. Book your pet sitter today!">
-    <meta property="og:image" content="https://russianhillpetsitting.com/assets/profile.png">
+    <meta property="og:title" content="Russian Hill Pet Sitting & Dog Walking | Trusted Local Care">
+    <meta property="og:description" content="Professional pet sitting & dog walking in Russian Hill, San Francisco. 5-star rated care for dogs & cats. Book your trusted local pet sitter today!">
+    <meta property="og:image" content="assets/optimized/profile-maria.webp">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://russianhillpetsitting.com/">
-    <meta property="twitter:title" content="Russian Hill Pet Sitting | Professional Pet Care Services in San Francisco">
-    <meta property="twitter:description" content="Trusted pet sitting services in Russian Hill, San Francisco. 5-star rated pet care for dogs and cats. Book your pet sitter today!">
-    <meta property="twitter:image" content="https://russianhillpetsitting.com/assets/profile.png">
+    <meta property="twitter:title" content="Russian Hill Pet Sitting & Dog Walking | Trusted Local Care">
+    <meta property="twitter:description" content="Professional pet sitting & dog walking in Russian Hill, San Francisco. 5-star rated care for dogs & cats. Book your trusted local pet sitter today!">
+    <meta property="twitter:image" content="assets/optimized/profile-maria.webp">
 
-    <title>Russian Hill Pet Sitting | Professional Pet Care Services in San Francisco</title>
+    <title>Russian Hill Pet Sitting & Dog Walking | Trusted Local Care</title>
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="icon" type="image/png" href="assets/optimized/profile-maria-small.webp">
     <link rel="canonical" href="https://russianhillpetsitting.com/">
-    <link rel="stylesheet" href="styles.css">
-    <!-- Google Fonts -->
+    <!-- Critical CSS inline -->
+    <style>
+        /* Add critical CSS here */
+        body { margin: 0; font-family: 'Poppins', sans-serif; }
+        .hero { min-height: 100vh; display: flex; align-items: center; }
+        /* Add other critical styles */
+    </style>
+    <!-- Preload critical assets -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" as="style">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style">
+    <!-- Defer non-critical CSS -->
+    <link rel="stylesheet" href="styles.css" media="print" onload="this.media='all'">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
     <!-- Schema.org markup for Google -->
@@ -38,7 +47,7 @@
         "@context": "https://schema.org",
         "@type": "LocalBusiness",
         "name": "Russian Hill Pet Sitting",
-        "image": "https://russianhillpetsitting.com/assets/profile.png",
+        "image": "https://russianhillpetsitting.com/assets/optimized/profile-maria.webp",
         "description": "Professional pet sitting services in Russian Hill, San Francisco. Offering dog walking, house visits, and boarding for dogs and cats.",
         "address": {
             "@type": "PostalAddress",
@@ -74,7 +83,89 @@
             "@type": "AggregateRating",
             "ratingValue": "5.0",
             "reviewCount": "25"
-        }
+        },
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Pet Care Services",
+            "itemListElement": [
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Dog Walking",
+                        "description": "Professional dog walking services in Russian Hill"
+                    },
+                    "price": "30",
+                    "priceCurrency": "USD",
+                    "priceValidUntil": "2025-12-31"
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "House Visits",
+                        "description": "In-home pet care visits in Russian Hill"
+                    },
+                    "price": "35",
+                    "priceCurrency": "USD",
+                    "priceValidUntil": "2025-12-31"
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "House Boarding",
+                        "description": "Overnight pet boarding in your home"
+                    },
+                    "price": "85",
+                    "priceCurrency": "USD",
+                    "priceValidUntil": "2025-12-31"
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Cat Sitting",
+                        "description": "Professional cat sitting services in Russian Hill"
+                    },
+                    "price": "30",
+                    "priceCurrency": "USD",
+                    "priceValidUntil": "2024-12-31"
+                }
+            ]
+        },
+        "areaServed": [
+            {
+                "@type": "City",
+                "name": "Russian Hill",
+                "containedIn": "San Francisco"
+            },
+            {
+                "@type": "City",
+                "name": "Nob Hill",
+                "containedIn": "San Francisco"
+            },
+            {
+                "@type": "City",
+                "name": "North Beach",
+                "containedIn": "San Francisco"
+            },
+            {
+                "@type": "City",
+                "name": "Telegraph Hill",
+                "containedIn": "San Francisco"
+            },
+            {
+                "@type": "City",
+                "name": "Pacific Heights",
+                "containedIn": "San Francisco"
+            },
+            {
+                "@type": "City",
+                "name": "San Francisco",
+                "containedIn": "California"
+            }
+        ]
     }
     </script>
 </head>
@@ -94,14 +185,14 @@
     <main>
         <section class="hero" aria-label="Main hero section">
             <div class="hero-content">
-                <h1>Professional Pet Care in Russian Hill, San Francisco</h1>
-                <p>Trusted, reliable, and loving care for your furry family members. 5-star rated pet sitting services.</p>
+                <h1>Professional Pet Sitting & Dog Walking in Russian Hill, San Francisco</h1>
+                <p>Trusted, reliable, and loving care for your furry family members. 5-star rated pet sitting services in Russian Hill.</p>
                 <a href="#contact" class="cta-button" aria-label="Schedule a Meet & Greet">Schedule a Meet & Greet</a>
             </div>
         </section>
 
         <section id="services" class="services" aria-label="Our pet care services">
-            <h2>Professional Pet Care Services in Russian Hill</h2>
+            <h2>Professional Pet Care Services in Russian Hill, San Francisco</h2>
             <div class="service-grid">
                 <div class="service-card">
                     <i class="fas fa-dog" aria-hidden="true"></i>
@@ -127,7 +218,7 @@
         </section>
 
         <section id="about" class="about">
-            <h2>Why Choose Us?</h2>
+            <h2>Why Choose Russian Hill Pet Sitting?</h2>
             <div class="features">
                 <div class="feature">
                     <i class="fas fa-map-marker-alt"></i>
@@ -148,7 +239,7 @@
         </section>
 
         <section class="about-sitters">
-            <h2>Meet Your Pet Care Team</h2>
+            <h2>Meet Your Russian Hill Pet Care Team</h2>
             <div class="sitter-info">
                 <div class="sitter-grid">
                     <div class="sitter-card">
@@ -178,8 +269,56 @@
             </div>
         </section>
 
+        <section class="local-area" aria-label="Local area information">
+            <h2>Pet-Friendly Areas We Serve in San Francisco</h2>
+            <div class="area-grid">
+                <div class="area-card">
+                    <h3>Russian Hill</h3>
+                    <p>Home to beautiful parks and scenic walking routes, including the famous Lombard Street and Ina Coolbrith Park. Perfect for dog walking with stunning city views.</p>
+                </div>
+                <div class="area-card">
+                    <h3>Nob Hill</h3>
+                    <p>Features Huntington Park and Grace Cathedral, offering great spaces for pet exercise and socialization.</p>
+                </div>
+                <div class="area-card">
+                    <h3>North Beach</h3>
+                    <p>Close to Washington Square Park and Coit Tower, providing excellent walking areas for pets.</p>
+                </div>
+                <div class="area-card">
+                    <h3>Telegraph Hill</h3>
+                    <p>Home to the famous Filbert Steps and Pioneer Park, offering unique walking experiences for pets.</p>
+                </div>
+                <div class="area-card">
+                    <h3>Pacific Heights</h3>
+                    <p>Features Alta Plaza Park and Lafayette Park, perfect for pet exercise and playtime.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="local-landmarks" aria-label="Local landmarks">
+            <h2>Popular Pet-Friendly Locations Near Us</h2>
+            <div class="landmarks-grid">
+                <div class="landmark-card">
+                    <h3>Ina Coolbrith Park</h3>
+                    <p>A hidden gem in Russian Hill, perfect for peaceful walks and enjoying panoramic views of the city.</p>
+                </div>
+                <div class="landmark-card">
+                    <h3>Lombard Street</h3>
+                    <p>Famous for its scenic beauty, offering unique walking routes for pets and their owners.</p>
+                </div>
+                <div class="landmark-card">
+                    <h3>Washington Square Park</h3>
+                    <p>A popular gathering spot in North Beach, great for pet socialization and exercise.</p>
+                </div>
+                <div class="landmark-card">
+                    <h3>Alta Plaza Park</h3>
+                    <p>Spacious park in Pacific Heights, ideal for active pets and outdoor playtime.</p>
+                </div>
+            </div>
+        </section>
+
         <section id="testimonials" class="testimonials" aria-label="Client testimonials">
-            <h2>Verified Client Reviews</h2>
+            <h2>Verified Client Reviews for Russian Hill Pet Sitting</h2>
             <div class="testimonial-slider">
                 <button class="slider-nav prev" aria-label="Previous testimonial">
                     <i class="fas fa-chevron-left"></i>
@@ -187,7 +326,13 @@
                 <div class="testimonial-container">
                     <div class="testimonial">
                         <div class="testimonial-image">
-                            <img src="assets/original.jpg" alt="Rebecca K.">
+                            <img src="assets/optimized/russian-hill-pet-sitting-client-rebecca-small.webp" 
+                                 srcset="assets/optimized/russian-hill-pet-sitting-client-rebecca-small.webp 300w,
+                                         assets/optimized/russian-hill-pet-sitting-client-rebecca.webp 668w"
+                                 sizes="(max-width: 768px) 300px, 668px"
+                                 alt="Rebecca K. - Happy client with her dog at Russian Hill Pet Sitting"
+                                 loading="lazy"
+                                 class="testimonial-image">
                         </div>
                         <div class="rating">
                             <i class="fas fa-star"></i>
@@ -204,7 +349,13 @@
                     </div>
                     <div class="testimonial">
                         <div class="testimonial-image">
-                            <img src="assets/original1.jpg" alt="Neha D.">
+                            <img src="assets/optimized/russian-hill-pet-sitting-client-ally-small.webp"
+                                 srcset="assets/optimized/russian-hill-pet-sitting-client-ally-small.webp 300w,
+                                         assets/optimized/russian-hill-pet-sitting-client-ally.webp 96w"
+                                 sizes="(max-width: 768px) 300px, 96px"
+                                 alt="Neha D. - Satisfied client with her pet at Russian Hill Pet Sitting"
+                                 loading="lazy"
+                                 class="testimonial-image">
                         </div>
                         <div class="rating">
                             <i class="fas fa-star"></i>
@@ -221,7 +372,13 @@
                     </div>
                     <div class="testimonial">
                         <div class="testimonial-image">
-                            <img src="assets/original3.jpg" alt="Christiane C.">
+                            <img src="assets/optimized/russian-hill-pet-sitting-client-chris-small.webp"
+                                 srcset="assets/optimized/russian-hill-pet-sitting-client-chris-small.webp 300w,
+                                         assets/optimized/russian-hill-pet-sitting-client-chris.webp 96w"
+                                 sizes="(max-width: 768px) 300px, 96px"
+                                 alt="Christiane C. - Happy dog owner with her pet at Russian Hill Pet Sitting"
+                                 loading="lazy"
+                                 class="testimonial-image">
                         </div>
                         <div class="rating">
                             <i class="fas fa-star"></i>
@@ -238,7 +395,13 @@
                     </div>
                     <div class="testimonial">
                         <div class="testimonial-image">
-                            <img src="assets/original4.jpg" alt="Alexander B.">
+                            <img src="assets/optimized/russian-hill-pet-sitting-client-robert-small.webp"
+                                 srcset="assets/optimized/russian-hill-pet-sitting-client-robert-small.webp 300w,
+                                         assets/optimized/russian-hill-pet-sitting-client-robert.webp 96w"
+                                 sizes="(max-width: 768px) 300px, 96px"
+                                 alt="Alexander B. - Client with his dog Paloma at Russian Hill Pet Sitting"
+                                 loading="lazy"
+                                 class="testimonial-image">
                         </div>
                         <div class="rating">
                             <i class="fas fa-star"></i>
@@ -255,7 +418,13 @@
                     </div>
                     <div class="testimonial">
                         <div class="testimonial-image">
-                            <img src="assets/original5.jpg" alt="Maya H.">
+                            <img src="assets/optimized/san-francisco-pet-sitting-client-alyn-small.webp"
+                                 srcset="assets/optimized/san-francisco-pet-sitting-client-alyn-small.webp 300w,
+                                         assets/optimized/san-francisco-pet-sitting-client-alyn.webp 96w"
+                                 sizes="(max-width: 768px) 300px, 96px"
+                                 alt="Maya H. - Satisfied dog owner at Russian Hill Pet Sitting"
+                                 loading="lazy"
+                                 class="testimonial-image">
                         </div>
                         <div class="rating">
                             <i class="fas fa-star"></i>
@@ -272,7 +441,13 @@
                     </div>
                     <div class="testimonial">
                         <div class="testimonial-image">
-                            <img src="assets/original6.jpeg" alt="Avvim F.">
+                            <img src="assets/optimized/russian-hill-pet-sitting-client-carlos-small.webp"
+                                 srcset="assets/optimized/russian-hill-pet-sitting-client-carlos-small.webp 300w,
+                                         assets/optimized/russian-hill-pet-sitting-client-carlos.webp 96w"
+                                 sizes="(max-width: 768px) 300px, 96px"
+                                 alt="Avvim F. - Happy client with their dog at Russian Hill Pet Sitting"
+                                 loading="lazy"
+                                 class="testimonial-image">
                         </div>
                         <div class="rating">
                             <i class="fas fa-star"></i>
@@ -289,7 +464,13 @@
                     </div>
                     <div class="testimonial">
                         <div class="testimonial-image">
-                            <img src="assets/original7.jpg" alt="Katherine D.">
+                            <img src="assets/optimized/russian-hill-pet-sitting-client-paul-small.webp"
+                                 srcset="assets/optimized/russian-hill-pet-sitting-client-paul-small.webp 300w,
+                                         assets/optimized/russian-hill-pet-sitting-client-paul.webp 96w"
+                                 sizes="(max-width: 768px) 300px, 96px"
+                                 alt="Katherine D. - Satisfied dog owner at Russian Hill Pet Sitting"
+                                 loading="lazy"
+                                 class="testimonial-image">
                         </div>
                         <div class="rating">
                             <i class="fas fa-star"></i>
@@ -306,7 +487,13 @@
                     </div>
                     <div class="testimonial">
                         <div class="testimonial-image">
-                            <img src="assets/original.jpg" alt="Taylor B.">
+                            <img src="assets/optimized/russian-hill-pet-sitting-client-rebecca-small.webp"
+                                 srcset="assets/optimized/russian-hill-pet-sitting-client-rebecca-small.webp 300w,
+                                         assets/optimized/russian-hill-pet-sitting-client-rebecca.webp 96w"
+                                 sizes="(max-width: 768px) 300px, 96px"
+                                 alt="Taylor B. - Happy client with their dog at Russian Hill Pet Sitting"
+                                 loading="lazy"
+                                 class="testimonial-image">
                         </div>
                         <div class="rating">
                             <i class="fas fa-star"></i>
@@ -323,7 +510,13 @@
                     </div>
                     <div class="testimonial">
                         <div class="testimonial-image">
-                            <img src="assets/original1.jpg" alt="Lanhee L.">
+                            <img src="assets/optimized/russian-hill-pet-sitting-client-ally-small.webp"
+                                 srcset="assets/optimized/russian-hill-pet-sitting-client-ally-small.webp 300w,
+                                         assets/optimized/russian-hill-pet-sitting-client-ally.webp 96w"
+                                 sizes="(max-width: 768px) 300px, 96px"
+                                 alt="Lanhee L. - Client with their two dogs at Russian Hill Pet Sitting"
+                                 loading="lazy"
+                                 class="testimonial-image">
                         </div>
                         <div class="rating">
                             <i class="fas fa-star"></i>
@@ -361,7 +554,7 @@
         </section>
 
         <section id="contact" class="contact" aria-label="Contact and booking information">
-            <h2>Book Your Pet Care Service</h2>
+            <h2>Book Your Russian Hill Pet Care Service</h2>
             <div class="whatsapp-contact">
                 <h3>Contact Us Directly</h3>
                 <div class="contact-options">
@@ -394,12 +587,17 @@
         </section>
 
         <section class="rover-booking" aria-label="Rover booking options">
-            <h2>Book Through Rover - Our Trusted Partner</h2>
+            <h2>Book Through Rover - Our Trusted Pet Sitting Partner</h2>
             <div class="rover-profile-preview">
                 <div class="rover-profile-card">
                     <div class="rover-profile-header">
                         <div class="rover-profile-image">
-                            <img src="assets/profile.png" alt="Maria R.">
+                            <img src="assets/optimized/profile-maria-small.webp" 
+                                 srcset="assets/optimized/profile-maria-small.webp 300w,
+                                         assets/optimized/profile-maria.webp 668w"
+                                 sizes="(max-width: 768px) 300px, 668px"
+                                 alt="Maria - Professional Pet Sitter in Russian Hill"
+                                 class="profile-image">
                         </div>
                         <div class="rover-profile-info">
                             <h3>Maria R.</h3>
@@ -476,6 +674,6 @@
             <p>&copy; 2025 Russian Hill Pet Sitting. All rights reserved.</p>
         </div>
     </footer>
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </body>
 </html> 
