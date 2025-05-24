@@ -285,6 +285,25 @@ function initMobilePhotoSlideshow() {
     const gridItems = gridContainer.querySelectorAll('.grid-item');
     if (gridItems.length === 0) return;
 
+    // Only proceed if we're in mobile view
+    if (window.innerWidth > 768) {
+        // Remove any existing mobile navigation elements
+        const existingNav = gridContainer.querySelector('.mobile-slider-nav');
+        const existingDots = gridContainer.parentNode.querySelector('.mobile-slider-dots');
+        if (existingNav) existingNav.remove();
+        if (existingDots) existingDots.remove();
+
+        // Remove active class from all items
+        gridItems.forEach(item => item.classList.remove('active'));
+        return;
+    }
+
+    // Remove any existing mobile navigation elements before adding new ones
+    const existingNav = gridContainer.querySelector('.mobile-slider-nav');
+    const existingDots = gridContainer.parentNode.querySelector('.mobile-slider-dots');
+    if (existingNav) existingNav.remove();
+    if (existingDots) existingDots.remove();
+
     // Create navigation buttons
     const prevButton = document.createElement('button');
     prevButton.className = 'mobile-slider-nav prev';
@@ -385,15 +404,10 @@ function initMobilePhotoSlideshow() {
 
 // Initialize mobile photo slideshow when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
-    // Check if we're on mobile
-    if (window.innerWidth <= 768) {
-        initMobilePhotoSlideshow();
-    }
+    initMobilePhotoSlideshow();
 
     // Re-initialize on window resize
     window.addEventListener('resize', () => {
-        if (window.innerWidth <= 768) {
-            initMobilePhotoSlideshow();
-        }
+        initMobilePhotoSlideshow();
     });
 }); 
