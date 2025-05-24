@@ -340,13 +340,18 @@ nav {
 }
 
 .service-card {
-    background: white;
+    background: #ffffff;
+    border-radius: 12px;
     padding: 2rem;
-    border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
     position: relative;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    min-height: 400px;
 }
 
 .service-card:hover {
@@ -356,24 +361,125 @@ nav {
 
 .service-card i {
     font-size: 2.5rem;
-    color: #3498db;
-    margin-bottom: 1rem;
-    transition: all 0.3s ease;
-}
-
-.service-card:hover i {
-    transform: scale(1.1);
+    color: #4a90e2;
+    margin-bottom: 0.75rem;
 }
 
 .service-card h3 {
-    color: #2c3e50;
+    color: #333;
+    margin-bottom: 0.75rem;
     font-size: 1.5rem;
-    margin-bottom: 1rem;
 }
 
 .service-card p {
     color: #666;
+    margin-bottom: 1rem;
     line-height: 1.6;
+}
+
+.pricing-info {
+    margin-top: auto;
+    padding-top: 1rem;
+    border-top: 1px solid #eee;
+}
+
+/* Add styles for single pricing option */
+.pricing-info:has(.price-option:only-child) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0.5rem;
+}
+
+.pricing-info:has(.price-option:only-child) .price-option {
+    width: 100%;
+    max-width: 200px;
+    margin: 0;
+    padding: 1.25rem;
+    background: linear-gradient(135deg, #4a90e2 0%, #357abd 100%);
+    color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(74, 144, 226, 0.2);
+    transform: scale(1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pricing-info:has(.price-option:only-child) .price-option:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(74, 144, 226, 0.3);
+}
+
+.pricing-info:has(.price-option:only-child) .price-option .price {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.pricing-info:has(.price-option:only-child) .price-option .price-label {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1rem;
+}
+
+.price-option {
+    margin: 1rem 0;
+    padding: 0.75rem;
+    border-radius: 8px;
+    background: #f8f9fa;
+    transition: background-color 0.3s ease;
+}
+
+.price-option.featured {
+    background: #4a90e2;
+    color: white;
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(74, 144, 226, 0.2);
+}
+
+.price-option .price {
+    display: block;
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+}
+
+.price-option .price-label {
+    display: block;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.price-option.featured .price-label {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.price-option .price-save {
+    display: block;
+    font-size: 0.8rem;
+    color: #2ecc71;
+    margin-top: 0.25rem;
+    font-weight: 600;
+}
+
+.price-option.featured .price-save {
+    color: #fff;
+    background: rgba(46, 204, 113, 0.2);
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    display: inline-block;
+    margin-top: 0.5rem;
+}
+
+@media (max-width: 768px) {
+    .service-card {
+        padding: 1.5rem;
+    }
+
+    .price-option {
+        padding: 0.5rem;
+    }
+
+    .price-option .price {
+        font-size: 1.5rem;
+    }
 }
 
 /* About Section */
