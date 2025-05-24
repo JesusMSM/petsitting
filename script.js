@@ -275,4 +275,125 @@ document.addEventListener('DOMContentLoaded', function () {
             prevSlide(); // Swipe right
         }
     }
+});
+
+// Mobile Photo Slideshow
+function initMobilePhotoSlideshow() {
+    const gridContainer = document.querySelector('.grid-container');
+    if (!gridContainer) return;
+
+    const gridItems = gridContainer.querySelectorAll('.grid-item');
+    if (gridItems.length === 0) return;
+
+    // Create navigation buttons
+    const prevButton = document.createElement('button');
+    prevButton.className = 'mobile-slider-nav prev';
+    prevButton.innerHTML = '❮';
+
+    const nextButton = document.createElement('button');
+    nextButton.className = 'mobile-slider-nav next';
+    nextButton.innerHTML = '❯';
+
+    // Create dots container
+    const dotsContainer = document.createElement('div');
+    dotsContainer.className = 'mobile-slider-dots';
+
+    // Create dots
+    gridItems.forEach((_, index) => {
+        const dot = document.createElement('div');
+        dot.className = 'mobile-dot';
+        if (index === 0) dot.classList.add('active');
+        dot.addEventListener('click', () => goToSlide(index));
+        dotsContainer.appendChild(dot);
+    });
+
+    // Add navigation elements to the container
+    gridContainer.appendChild(prevButton);
+    gridContainer.appendChild(nextButton);
+    gridContainer.parentNode.appendChild(dotsContainer);
+
+    let currentSlide = 0;
+
+    // Show first slide
+    gridItems[0].classList.add('active');
+
+    function updateSlides() {
+        gridItems.forEach((item, index) => {
+            item.classList.remove('active');
+            if (index === currentSlide) {
+                item.classList.add('active');
+            }
+        });
+
+        // Update dots
+        const dots = dotsContainer.querySelectorAll('.mobile-dot');
+        dots.forEach((dot, index) => {
+            dot.classList.toggle('active', index === currentSlide);
+        });
+    }
+
+    function goToSlide(index) {
+        currentSlide = index;
+        updateSlides();
+    }
+
+    function nextSlide() {
+        currentSlide = (currentSlide + 1) % gridItems.length;
+        updateSlides();
+    }
+
+    function prevSlide() {
+        currentSlide = (currentSlide - 1 + gridItems.length) % gridItems.length;
+        updateSlides();
+    }
+
+    // Add event listeners
+    nextButton.addEventListener('click', nextSlide);
+    prevButton.addEventListener('click', prevSlide);
+
+    // Auto-advance slides every 5 seconds
+    let slideInterval = setInterval(nextSlide, 5000);
+
+    // Pause auto-advance when user interacts
+    gridContainer.addEventListener('mouseenter', () => clearInterval(slideInterval));
+    gridContainer.addEventListener('mouseleave', () => {
+        slideInterval = setInterval(nextSlide, 5000);
+    });
+
+    // Touch swipe support
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    gridContainer.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+    });
+
+    gridContainer.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
+    });
+
+    function handleSwipe() {
+        const swipeThreshold = 50;
+        if (touchEndX < touchStartX - swipeThreshold) {
+            nextSlide();
+        } else if (touchEndX > touchStartX + swipeThreshold) {
+            prevSlide();
+        }
+    }
+}
+
+// Initialize mobile photo slideshow when DOM is loaded
+document.addEventListener('DOMContentLoaded', () => {
+    // Check if we're on mobile
+    if (window.innerWidth <= 768) {
+        initMobilePhotoSlideshow();
+    }
+
+    // Re-initialize on window resize
+    window.addEventListener('resize', () => {
+        if (window.innerWidth <= 768) {
+            initMobilePhotoSlideshow();
+        }
+    });
 }); 
