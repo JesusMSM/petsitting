@@ -120,4 +120,159 @@ ${message}
 
     const mailtoLink = `mailto:maria_romar@hotmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     window.location.href = mailtoLink;
-} 
+}
+
+// Photo Gallery Slideshow
+document.addEventListener('DOMContentLoaded', function () {
+    const slides = document.querySelectorAll('.slide');
+    const dots = document.querySelector('.slideshow-dots');
+    const prevBtn = document.querySelector('.slideshow-nav.prev');
+    const nextBtn = document.querySelector('.slideshow-nav.next');
+    let currentSlide = 0;
+    let slideInterval;
+
+    // Create dots
+    slides.forEach((_, index) => {
+        const dot = document.createElement('div');
+        dot.classList.add('dot');
+        if (index === 0) dot.classList.add('active');
+        dot.addEventListener('click', () => goToSlide(index));
+        dots.appendChild(dot);
+    });
+
+    const dotElements = document.querySelectorAll('.dot');
+
+    function updateSlides() {
+        slides.forEach((slide, index) => {
+            slide.classList.remove('active');
+            dotElements[index].classList.remove('active');
+        });
+        slides[currentSlide].classList.add('active');
+        dotElements[currentSlide].classList.add('active');
+    }
+
+    function goToSlide(index) {
+        currentSlide = index;
+        updateSlides();
+        resetInterval();
+    }
+
+    function nextSlide() {
+        currentSlide = (currentSlide + 1) % slides.length;
+        updateSlides();
+    }
+
+    function prevSlide() {
+        currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+        updateSlides();
+    }
+
+    function resetInterval() {
+        clearInterval(slideInterval);
+        slideInterval = setInterval(nextSlide, 5000);
+    }
+
+    // Event listeners
+    prevBtn.addEventListener('click', () => {
+        prevSlide();
+        resetInterval();
+    });
+
+    nextBtn.addEventListener('click', () => {
+        nextSlide();
+        resetInterval();
+    });
+
+    // Start automatic slideshow
+    resetInterval();
+
+    // Pause slideshow on hover
+    const slideshowContainer = document.querySelector('.slideshow-container');
+    slideshowContainer.addEventListener('mouseenter', () => clearInterval(slideInterval));
+    slideshowContainer.addEventListener('mouseleave', resetInterval);
+});
+
+// Mobile Slideshow Functionality
+document.addEventListener('DOMContentLoaded', function () {
+    const slideshowContainer = document.querySelector('.slideshow-container');
+    const slides = document.querySelectorAll('.slide');
+    const prevButton = document.querySelector('.slideshow-nav.prev');
+    const nextButton = document.querySelector('.slideshow-nav.next');
+    const dotsContainer = document.querySelector('.slideshow-dots');
+
+    if (!slideshowContainer) return; // Exit if not on mobile view
+
+    let currentSlide = 0;
+    const totalSlides = slides.length;
+
+    // Create dots
+    slides.forEach((_, index) => {
+        const dot = document.createElement('div');
+        dot.classList.add('dot');
+        if (index === 0) dot.classList.add('active');
+        dot.addEventListener('click', () => goToSlide(index));
+        dotsContainer.appendChild(dot);
+    });
+
+    const dots = document.querySelectorAll('.dot');
+
+    function updateSlideshow() {
+        slideshowContainer.style.transform = `translateX(-${currentSlide * 100}%)`;
+        dots.forEach((dot, index) => {
+            dot.classList.toggle('active', index === currentSlide);
+        });
+    }
+
+    function goToSlide(index) {
+        currentSlide = index;
+        updateSlideshow();
+    }
+
+    function nextSlide() {
+        currentSlide = (currentSlide + 1) % totalSlides;
+        updateSlideshow();
+    }
+
+    function prevSlide() {
+        currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+        updateSlideshow();
+    }
+
+    // Event listeners
+    prevButton.addEventListener('click', prevSlide);
+    nextButton.addEventListener('click', nextSlide);
+
+    // Auto-advance slides every 5 seconds
+    let slideInterval = setInterval(nextSlide, 5000);
+
+    // Pause auto-advance when hovering over slideshow
+    slideshowContainer.addEventListener('mouseenter', () => {
+        clearInterval(slideInterval);
+    });
+
+    slideshowContainer.addEventListener('mouseleave', () => {
+        slideInterval = setInterval(nextSlide, 5000);
+    });
+
+    // Touch events for swipe
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    slideshowContainer.addEventListener('touchstart', e => {
+        touchStartX = e.changedTouches[0].screenX;
+    });
+
+    slideshowContainer.addEventListener('touchend', e => {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
+    });
+
+    function handleSwipe() {
+        const swipeThreshold = 50;
+        if (touchEndX < touchStartX - swipeThreshold) {
+            nextSlide(); // Swipe left
+        } else if (touchEndX > touchStartX + swipeThreshold) {
+            prevSlide(); // Swipe right
+        }
+    }
+}); 
