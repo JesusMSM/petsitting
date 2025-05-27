@@ -1,4 +1,35 @@
 document.addEventListener('DOMContentLoaded', function () {
+    // Handle hash navigation with UTM parameters
+    const handleHashNavigation = () => {
+        // Get the full URL and parse it
+        const url = new URL(window.location.href);
+        const hash = url.hash;
+
+        if (hash) {
+            const targetElement = document.querySelector(hash);
+            if (targetElement) {
+                // Add a small delay to ensure the page is fully loaded
+                setTimeout(() => {
+                    // Calculate the offset to account for fixed header
+                    const headerOffset = 70; // Height of your fixed header
+                    const elementPosition = targetElement.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                }, 100);
+            }
+        }
+    };
+
+    // Handle initial page load
+    handleHashNavigation();
+
+    // Handle hash changes
+    window.addEventListener('hashchange', handleHashNavigation);
+
     const container = document.querySelector('.testimonial-container');
     const testimonials = document.querySelectorAll('.testimonial');
     const prevBtn = document.querySelector('.slider-nav.prev');
