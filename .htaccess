@@ -59,11 +59,21 @@ Options -Indexes
     Deny from all
 </Files>
 
-# Redirect to HTTPS
+# Redirect to HTTPS and handle clean URLs
 <IfModule mod_rewrite.c>
     RewriteEngine On
+    
+    # Redirect to HTTPS
     RewriteCond %{HTTPS} off
     RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+    
+    # Handle /contact URL
+    RewriteRule ^contact/?$ contact.html [L]
+    
+    # Remove .html extension
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME}.html -f
+    RewriteRule ^(.*)$ $1.html [L]
 </IfModule>
 
 # Add correct content-type for fonts
