@@ -20,8 +20,8 @@
     <!-- End Google Tag Manager -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Professional pet sitting & dog walking in Russian Hill, San Francisco. 5-star rated care for dogs & cats. Book your trusted local pet sitter today!">
-    <meta name="keywords" content="pet sitting, dog walking, cat sitting, Russian Hill, San Francisco, pet boarding, house visits, professional pet care, local pet sitter, dog boarding, cat boarding">
+    <meta name="description" content="Professional pet sitting & dog walking in San Francisco. 5-star rated care for dogs & cats. Book your trusted local pet sitter today!">
+    <meta name="keywords" content="pack walk, pet sitting, dog walking, cat sitting, Russian Hill, San Francisco, pet boarding, house visits, professional pet care, local pet sitter, dog boarding, cat boarding">
     <meta name="author" content="Russian Hill Pet Sitting">
     <meta name="robots" content="index, follow">
     
@@ -36,7 +36,7 @@
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://russianhillpetsitting.com/">
     <meta property="twitter:title" content="Russian Hill Pet Sitting & Dog Walking | Trusted Local Care">
-    <meta property="twitter:description" content="Professional pet sitting & dog walking in Russian Hill, San Francisco. 5-star rated care for dogs & cats. Book your trusted local pet sitter today!">
+    <meta property="twitter:description" content="Professional pet sitting & dog walking in San Francisco. 5-star rated care for dogs & cats. Book your trusted local pet sitter today!">
     <meta property="twitter:image" content="assets/optimized/profile-maria.webp">
 
     <title>Russian Hill Pet Sitting & Dog Walking | Trusted Local Care</title>
@@ -195,7 +195,7 @@
         <nav>
             <div class="logo"><a href="#" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;">Russian Hill Pet Sitting</a></div>
             <ul class="nav-links">
-                <li><a href="#services">Services</a></li>
+                <li><a href="#services">Rates & Services</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#testimonials">Testimonials</a></li>
                 <li><a href="#contact" class="cta-button">Book Now</a></li>
@@ -208,7 +208,10 @@
             <div class="hero-content">
                 <h1>Professional Pet Sitting & Dog Walking in San Francisco</h1>
                 <p>Trusted, reliable, and loving care for your furry family members. 5-star rated pet sitting services in Russian Hill.</p>
-                <a href="#contact" class="cta-button" aria-label="Schedule a Meet & Greet">Schedule a Meet & Greet</a>
+                <div class="hero-buttons">
+                    <a href="#contact" class="cta-button" aria-label="Schedule a Meet & Greet">Schedule a Meet & Greet</a>
+                    <a href="#services" class="cta-button secondary" aria-label="See Rates">See Rates</a>
+                </div>
             </div>
         </section>
 
@@ -473,6 +476,10 @@
                     <h3>Alta Plaza Park</h3>
                     <p>Spacious park in Pacific Heights, ideal for active pets and outdoor playtime.</p>
                 </div>
+                <div class="landmark-card">
+                    <h3>Lafayette Park</h3>
+                    <p>A beautiful urban park in Pacific Heights featuring open spaces and walking paths perfect for pets.</p>
+                </div>
             </div>
         </section>
 
@@ -725,19 +732,28 @@
                 </div>
                 <p>For immediate assistance, message us on WhatsApp or send a text</p>
             </div>
-            </div>
             <form class="contact-form" id="contactForm">
-                <input type="text" placeholder="Your Name" required>
-                <input type="email" placeholder="Email Address" required>
-                <input type="tel" placeholder="Phone Number" required>
-                <select required>
-                    <option value="">Select Service</option>
-                    <option value="dog-walking">Dog Walking</option>
-                    <option value="house-visits">House Visits</option>
-                    <option value="house-boarding">House Boarding</option>
-                    <option value="cat-sitting">Cat Sitting</option>
-                </select>
-                <textarea placeholder="Tell us about your pets" required></textarea>
+                <div class="form-group">
+                    <input type="text" placeholder="Your Name" required aria-label="Your Name">
+                </div>
+                <div class="form-group">
+                    <input type="email" placeholder="Email Address" required aria-label="Email Address">
+                </div>
+                <div class="form-group">
+                    <input type="tel" placeholder="Phone Number" required aria-label="Phone Number">
+                </div>
+                <div class="form-group">
+                    <select required aria-label="Select Service">
+                        <option value="">Select Service</option>
+                        <option value="dog-walking">Dog Walking</option>
+                        <option value="house-visits">House Visits</option>
+                        <option value="house-boarding">House Boarding</option>
+                        <option value="cat-sitting">Cat Sitting</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <textarea placeholder="Tell us about your pets" required aria-label="Pet Information"></textarea>
+                </div>
                 <button type="submit" class="cta-button" onclick="sendEmail(event)">Send Request</button>
             </form>
         </section>
