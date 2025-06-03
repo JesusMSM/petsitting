@@ -441,4 +441,23 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('resize', () => {
         initMobilePhotoSlideshow();
     });
+});
+
+// FAQ Section Functionality
+document.addEventListener('DOMContentLoaded', function () {
+    const faqQuestions = document.querySelectorAll('.faq-question');
+
+    faqQuestions.forEach(question => {
+        question.addEventListener('click', () => {
+            const isExpanded = question.getAttribute('aria-expanded') === 'true';
+
+            // Close all other questions
+            faqQuestions.forEach(q => {
+                q.setAttribute('aria-expanded', 'false');
+            });
+
+            // Toggle current question
+            question.setAttribute('aria-expanded', !isExpanded);
+        });
+    });
 }); 
