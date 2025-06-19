@@ -2189,3 +2189,78 @@ html {
         padding: 1rem;
     }
 }
+
+/* Pack Walk Highlight Section */
+.pack-walk-highlight {
+    padding: 5rem 1rem;
+    background-color: #f8f9fa;
+    animation: fadeIn 0.7s ease-out;
+}
+
+.pack-walk-highlight h2 {
+    text-align: center;
+    margin-bottom: 2.5rem;
+    color: #2c3e50;
+    font-size: 2.2rem;
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+.pack-walk-highlight h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background-color: #3498db;
+}
+
+.pack-walk-content {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 4px 16px rgba(52, 152, 219, 0.08);
+    padding: 2.5rem 2rem;
+    text-align: left;
+    font-size: 1.15rem;
+    color: #444;
+    line-height: 1.7;
+}
+
+.pack-walk-content ul {
+    margin: 2rem 0 2rem 1.5rem;
+    padding: 0;
+    list-style: disc inside;
+    color: #3498db;
+    font-weight: 500;
+}
+
+.pack-walk-content ul li {
+    margin-bottom: 0.75rem;
+    color: #3498db;
+    font-weight: 500;
+    font-size: 1.08rem;
+}
+
+.pack-walk-content p {
+    color: #444;
+    margin-bottom: 1.2rem;
+}
+
+@media (max-width: 768px) {
+    .pack-walk-highlight {
+        padding: 3rem 0.5rem;
+    }
+
+    .pack-walk-content {
+        padding: 1.5rem 0.7rem;
+        font-size: 1rem;
+    }
+
+    .pack-walk-highlight h2 {
+        font-size: 1.5rem;
+    }
+}
