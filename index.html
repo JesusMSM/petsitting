@@ -775,28 +775,29 @@
             <h2>Quick Contact Options</h2>
             <div class="whatsapp-container">
                 <div class="contact-buttons">
+                    <a href="sms:+14155109833" class="cta-button sms-button">
+                        <i class="fas fa-comment"></i> Text us!
+                    </a>
                     <a href="https://wa.me/34686807230" class="cta-button whatsapp-button" target="_blank">
                         <i class="fab fa-whatsapp"></i> Chat on WhatsApp
-                    </a>
-                    <a href="sms:+14155109833" class="cta-button sms-button">
-                        <i class="fas fa-comment"></i> Send Text Message
                     </a>
                 </div>
                 <p>For immediate assistance, message us on WhatsApp or send a text</p>
             </div>
             <form class="contact-form" id="contactForm">
                 <div class="form-group">
-                    <input type="text" placeholder="Your Name" required aria-label="Your Name">
+                    <input type="text" placeholder="Your Name" required aria-label="Your Name" autocomplete="name">
                 </div>
                 <div class="form-group">
-                    <input type="email" placeholder="Email Address" required aria-label="Email Address">
+                    <input type="email" placeholder="Email Address" required aria-label="Email Address" autocomplete="email">
                 </div>
                 <div class="form-group">
-                    <input type="tel" placeholder="Phone Number" required aria-label="Phone Number">
+                    <input type="tel" placeholder="Phone Number" required aria-label="Phone Number" autocomplete="tel">
                 </div>
                 <div class="form-group">
                     <select required aria-label="Select Service">
                         <option value="">Select Service</option>
+                        <option value="pack-walks">Pack walks</option>
                         <option value="dog-walking">Dog Walking</option>
                         <option value="house-visits">House Visits</option>
                         <option value="house-boarding">House Boarding</option>
