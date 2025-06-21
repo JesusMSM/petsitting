@@ -140,14 +140,14 @@ function sendEmail(event) {
 
     const subject = `New Pet Sitting Request from ${name}`;
     const body = `
-Name: ${name}
-Email: ${email}
-Phone: ${phone}
-Service: ${service}
+        Name: ${name}
+        Email: ${email}
+        Phone: ${phone}
+        Service: ${service}
 
-Message:
-${message}
-    `.trim();
+        Message:
+        ${message}
+        `.trim();
 
     const mailtoLink = `mailto:maria_romar@hotmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     window.location.href = mailtoLink;
