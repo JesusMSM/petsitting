@@ -52,16 +52,20 @@
 
     <main>
         <section class="whatsapp-contact">
-            <h2>Quick Contact Options</h2>
+            <div class="hero-buttons hero-buttons-focused">
+                <a href="sms:+14155109833?body=Hi! I'm interested in joining your pack walk! I would like to join <enter days> days per week" class="cta-button hero-packwalk-btn" aria-label="Join our pack walk">
+                    <i class="fas fa-dog"></i> Join our Pack Walk
+                </a>
+            </div>
+            <div class="hero-secondary-buttons">
+                <a href="sms:+14155109833?body=Hi! I'm interested in your pet sitting services. Could you tell me more about your rates and availability?" class="cta-button sms-button">
+                    <i class="fas fa-comment"></i> Text us!
+                </a>
+                <a href="https://wa.me/34686807230" class="cta-button whatsapp-button" target="_blank">
+                    <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+                </a>
+            </div>
             <div class="whatsapp-container">
-                <div class="contact-buttons">
-                    <a href="sms:+14155109833?body=Hi! I'm interested in your pet sitting services. Could you tell me more about your rates and availability?" class="cta-button sms-button">
-                        <i class="fas fa-comment"></i> Text us!
-                    </a>
-                    <a href="https://wa.me/34686807230" class="cta-button whatsapp-button" target="_blank">
-                        <i class="fab fa-whatsapp"></i> Chat on WhatsApp
-                    </a>
-                </div>
                 <p>For immediate assistance, message us on WhatsApp or send a text</p>
                 <div class="rates-link-container">
                     <div class="paw-prints">
@@ -77,27 +81,43 @@
 
         <section id="services" class="services" aria-label="Our pet care services">
             <h2>Professional Pet Care Services in San Francisco</h2>
-            <div class="service-grid">
-                <div class="service-card">
-                    <i class="fas fa-dog" aria-hidden="true"></i>
-                    <h3>Pack walk services</h3>
-                    <p>Regular exercise and outdoor time for your dog, tailored to their needs and energy level. 1-2 hour walk.</p>
-                    <div class="pricing-info">
+            
+            <!-- Featured Pack Walk Services Section -->
+            <div class="pack-walk-featured">
+                <div class="pack-walk-card">
+                    <div class="pack-walk-info">
+                        <h3>Our Premium Pack Walks</h3>
+                        <p>An immersive social experience for your dog. More than a walk, it's an adventure!</p>
+                        <a href="sms:+14155109833?body=Hi! I'm interested in joining your pack walk!" class="cta-button">
+                            <i class="fas fa-dog"></i> Join The Pack
+                        </a>
+                    </div>
+                    <div class="pack-walk-pricing">
                         <div class="price-option featured">
-                            <span class="price">$150</span>
-                            <span class="price-label">5 Walks/Week</span>
+                            <div class="price-tag">
+                                <span class="price">$150</span>
+                                <span class="price-label">/ week</span>
+                            </div>
+                            <div class="price-details">
+                                <strong>Full Week Adventure</strong>
+                                <span>5 Walks/Week</span>
+                            </div>
                             <span class="price-save">Save $25</span>
                         </div>
                         <div class="price-option">
-                            <span class="price">$35</span>
-                            <span class="price-label">Single Walk</span>
-                        </div>
-                        <div class="price-option">
-                            <span class="price">Custom</span>
-                            <span class="price-label">Monthly Bundles</span>
+                            <div class="price-tag">
+                                <span class="price">$35</span>
+                            </div>
+                            <div class="price-details">
+                                <strong>Single Day Fun</strong>
+                                <span>1 Walk</span>
+                            </div>
                         </div>
                     </div>
                 </div>
+            </div>
+
+            <div class="service-grid">
                 <div class="service-card">
                     <i class="fas fa-dog" aria-hidden="true"></i>
                     <h3>1:1 Dog Walking</h3>
@@ -132,7 +152,7 @@
                         <div class="price-option featured">
                             <span class="price">$85</span>
                             <span class="price-label">24 hours</span>
-                            <span class="price-save">Overnight stay at your home +$15/night</span>
+                            <span>Overnight stay at your home +$15/night</span>
                         </div>
                     </div>
                 </div>
@@ -239,7 +259,7 @@
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            background: linear-gradient(45deg, #FF6B6B, #FF8E8E);
+            background: #4d9dff;
             color: white;
             padding: 12px 24px;
             border-radius: 25px;
