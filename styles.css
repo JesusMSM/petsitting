@@ -229,6 +229,41 @@ nav {
 
 /* Hero Section */
 .hero {
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-bg-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.35);
+    /* dark overlay for readability */
+    z-index: 1;
+}
+
+.hero-content,
+.hero-buttons,
+.hero-secondary-buttons {
+    position: relative;
+    z-index: 2;
+}
+
+.hero {
     background: linear-gradient(rgba(44, 62, 80, 0.7), rgba(44, 62, 80, 0.7)),
         url('https://images.unsplash.com/photo-1450778869180-41d0601e046e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
     background-size: cover;
@@ -2778,5 +2813,13 @@ body.blog {
 
     .price-tag {
         text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-bg-video {
+        object-fit: cover;
+        min-width: 100vw;
+        min-height: 100vh;
     }
 }
