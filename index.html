@@ -206,13 +206,47 @@
 
     <main>
         <section class="hero" aria-label="Main hero section">
-            <video class="hero-bg-video" autoplay loop muted playsinline poster="assets/optimized/horizontal.webp">
+            <video class="hero-bg-video" autoplay loop muted playsinline preload="auto" poster="assets/optimized/horizontal.webp" id="heroVideo">
                 <source src="assets/optimized/horizontal.webm" type="video/webm" media="(min-width: 769px)">
                 <source src="assets/optimized/horizontal.mp4" type="video/mp4" media="(min-width: 769px)">
                 <source src="assets/optimized/vertical.webm" type="video/webm" media="(max-width: 768px)">
                 <source src="assets/optimized/vertical.mp4" type="video/mp4" media="(max-width: 768px)">
                 Your browser does not support the video tag.
             </video>
+            <!-- Fallback image for users with JS disabled or video load failure -->
+            <noscript>
+                <img src="assets/optimized/horizontal.webp" alt="Dog pack walk background" style="width:100%;height:auto;object-fit:cover;display:block;" />
+            </noscript>
+            <div id="heroVideoFallback" style="display:none;">
+                <img src="assets/optimized/horizontal.webp" alt="Dog pack walk background" style="width:100%;height:auto;object-fit:cover;display:block;" />
+            </div>
+            <script>
+            // Fallback for video load failure on mobile
+            document.addEventListener('DOMContentLoaded', function() {
+                var video = document.getElementById('heroVideo');
+                var fallback = document.getElementById('heroVideoFallback');
+                if (video) {
+                    var showFallback = function() {
+                        video.style.display = 'none';
+                        fallback.style.display = 'block';
+                    };
+                    // If video errors or doesn't play after a short timeout, show fallback
+                    video.addEventListener('error', showFallback);
+                    var playPromise = video.play();
+                    if (playPromise !== undefined) {
+                        playPromise.catch(function() {
+                            showFallback();
+                        });
+                    }
+                    // Extra: If video hasn't started after 2 seconds, show fallback
+                    setTimeout(function() {
+                        if (video.paused || video.readyState < 2) {
+                            showFallback();
+                        }
+                    }, 2000);
+                }
+            });
+            </script>
             <div class="hero-content">
                 <h1>San Francisco's Most Exciting Dog Pack Walks!</h1>
                 <ul class="hero-benefits">
