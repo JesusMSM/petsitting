@@ -51,6 +51,19 @@
     </header>
 
     <main>
+        <!-- Add Breadcrumb Navigation for SEO -->
+        <nav aria-label="Breadcrumb" class="breadcrumb">
+            <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+                <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                    <a href="index.html" itemprop="item"><span itemprop="name">Home</span></a>
+                    <meta itemprop="position" content="1" />
+                </li>
+                <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                    <span itemprop="name">Contact</span>
+                    <meta itemprop="position" content="2" />
+                </li>
+            </ol>
+        </nav>
         <section class="whatsapp-contact">
             <div class="hero-buttons hero-buttons-focused">
                 <a href="sms:+14155109833?body=Hi! I'm interested in your pack walk! Could you tell me more about your rates and availability?" class="cta-button hero-packwalk-btn" aria-label="Join our pack walk">
@@ -89,7 +102,7 @@
         </section>
 
         <section id="services" class="services" aria-label="Our pet care services">
-            <h2>Professional Pet Care Services in San Francisco</h2>
+            <h2>Professional Pet Care Services in San Francisco – Dog Walking, Cat Sitting, and More</h2>
             
             <!-- Featured Pack Walk Services Section -->
             <div class="pack-walk-featured">
@@ -179,6 +192,54 @@
             </div>
         </section>
 
+        <section id="faq" class="faq" aria-label="Frequently Asked Questions">
+            <h2>Frequently Asked Questions</h2>
+            <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "FAQPage",
+                "mainEntity": [
+                    {
+                        "@type": "Question",
+                        "name": "Are you insured?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Yes, all our pet sitting and walking services are insured by Pet Care Insurance. This provides peace of mind for both you and your pets, covering various aspects of our services including general liability and pet protection coverage."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Do you only serve Russian Hill area?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "No, while we focus in Russian Hill and surrounding areas, we also serve other neighborhoods including Pacific Heights and Haight-Ashbury. We're happy to discuss service availability for your specific location."
+                        }
+                    }
+                ]
+            }
+            </script>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        Are you insured?
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes, all our pet sitting and walking services are insured by <a href="https://www.petcareins.com/" target="_blank" rel="noopener noreferrer">Pet Care Insurance</a>. This provides peace of mind for both you and your pets, covering various aspects of our services including general liability and pet protection coverage.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        Do you only serve Russian Hill area?
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>No, while we focus in Russian Hill and surrounding areas, we also serve other neighborhoods including Pacific Heights and Haight-Ashbury. We're happy to discuss service availability for your specific location.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section id="contact" class="contact" aria-label="Contact and booking information">
             <form class="contact-form" id="contactForm">
                 <div class="form-group">
@@ -207,7 +268,79 @@
             </form>
         </section>
 
-
+        <!-- Add Review schema markup for testimonials (sample reviews) -->
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "ItemList",
+            "itemListElement": [
+                {
+                    "@type": "Review",
+                    "author": {"@type": "Person", "name": "Rebecca K."},
+                    "reviewBody": "Maria was great with my pup! She is a great communicator, arrives on time and shared some really nice photos. She left our house super clean. Would absolutely recommend and we hope that she will care for our dog again in the future!",
+                    "reviewRating": {"@type": "Rating", "ratingValue": "5"},
+                    "itemReviewed": {"@type": "Service", "name": "House Sitting"}
+                },
+                {
+                    "@type": "Review",
+                    "author": {"@type": "Person", "name": "Ally M."},
+                    "reviewBody": "Maria is the best! She is so reliable, communicative, and truly cares for our dog as if he were her own. We get daily updates and photos, and our dog is always so happy to see her. Highly recommend!",
+                    "reviewRating": {"@type": "Rating", "ratingValue": "5"},
+                    "itemReviewed": {"@type": "Service", "name": "Dog Walking"}
+                }
+            ,
+                {
+                    "@type": "Review",
+                    "author": {"@type": "Person", "name": "Megan M."},
+                    "reviewBody": "Maria is the best! She is so sweet with our dog and always keeps us updated. We are so grateful to have found her.",
+                    "reviewRating": {"@type": "Rating", "ratingValue": "5"},
+                    "itemReviewed": {"@type": "Service", "name": "Dog Walking"}
+                },
+                {
+                    "@type": "Review",
+                    "author": {"@type": "Person", "name": "Megan S."},
+                    "reviewBody": "Maria is amazing! She is so loving and attentive with our dog, and always goes above and beyond. We trust her completely and appreciate her flexibility and professionalism.",
+                    "reviewRating": {"@type": "Rating", "ratingValue": "5"},
+                    "itemReviewed": {"@type": "Service", "name": "Dog Walking"}
+                },
+                {
+                    "@type": "Review",
+                    "author": {"@type": "Person", "name": "Katherine S."},
+                    "reviewBody": "Maria is wonderful! She is very responsive, responsible, and our dog adores her. She sends great updates and photos, and we always feel at ease knowing our pup is in her care.",
+                    "reviewRating": {"@type": "Rating", "ratingValue": "5"},
+                    "itemReviewed": {"@type": "Service", "name": "Dog Walking"}
+                },
+                {
+                    "@type": "Review",
+                    "author": {"@type": "Person", "name": "Neha D."},
+                    "reviewBody": "Maria took great care of Auggie and kept us updated regularly with lots of great pictures. She communicated efficiently and followed all instructions. The house also looked better than we left it!",
+                    "reviewRating": {"@type": "Rating", "ratingValue": "5"},
+                    "itemReviewed": {"@type": "Service", "name": "House Sitting"}
+                },
+                {
+                    "@type": "Review",
+                    "author": {"@type": "Person", "name": "Katherine D."},
+                    "reviewBody": "Very friendly and had lots of patience. Awesome with communication and overall great experience. Thank you again!",
+                    "reviewRating": {"@type": "Rating", "ratingValue": "5"},
+                    "itemReviewed": {"@type": "Service", "name": "Doggy Day Care"}
+                },
+                {
+                    "@type": "Review",
+                    "author": {"@type": "Person", "name": "Taylor B."},
+                    "reviewBody": "My pet sitter fell through and Maria accommodated a very last minute request, saving me! She was very communicative and took great care of my dog while I was away.",
+                    "reviewRating": {"@type": "Rating", "ratingValue": "5"},
+                    "itemReviewed": {"@type": "Service", "name": "Dog Boarding"}
+                },
+                {
+                    "@type": "Review",
+                    "author": {"@type": "Person", "name": "Lanhee L."},
+                    "reviewBody": "Quick response and provided photos during stay! Thank you so much Maria for watching our two dogs! ❤️",
+                    "reviewRating": {"@type": "Rating", "ratingValue": "5"},
+                    "itemReviewed": {"@type": "Service", "name": "Doggy Day Care"}
+                }
+            ]
+        }
+        </script>
     </main>
 
     <footer>

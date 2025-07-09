@@ -126,7 +126,7 @@
         </nav>
     </header>
     <main class="blog-main">
-        <!-- Breadcrumb Navigation -->
+        <!-- Add Breadcrumb Navigation for SEO -->
         <nav aria-label="Breadcrumb" class="breadcrumb">
             <ol itemscope itemtype="https://schema.org/BreadcrumbList">
                 <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
@@ -255,12 +255,78 @@
             </section>
         </article>
         
-        <!-- Related Services Section -->
-        <section class="related-services">
-            <h2>Explore Our San Francisco Pet Services</h2>
-            <p>Discover our comprehensive range of pet care services and competitive rates designed specifically for San Francisco pet parents.</p>
-            <p class="blog-cta"><a href="index.html#services" class="cta-button">View All Services & Rates</a></p>
+        <!-- Add FAQ Section for SEO -->
+        <section id="faq" class="faq" aria-label="Frequently Asked Questions">
+            <h2>Frequently Asked Questions</h2>
+            <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "FAQPage",
+                "mainEntity": [
+                    {
+                        "@type": "Question",
+                        "name": "What areas do you serve in San Francisco?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "We serve Russian Hill, Pacific Heights, North Beach, Nob Hill, Telegraph Hill, and surrounding neighborhoods in San Francisco."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "What services do you offer?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "We offer dog walking, pack walks, cat sitting, house visits, house boarding, and more. See our services section for details."
+                        }
+                    }
+                ]
+            }
+            </script>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        What areas do you serve in San Francisco?
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>We serve Russian Hill, Pacific Heights, North Beach, Nob Hill, Telegraph Hill, and surrounding neighborhoods in San Francisco.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        What services do you offer?
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>We offer dog walking, pack walks, cat sitting, house visits, house boarding, and more. <a href="index.html#services">See our services section for details</a>.</p>
+                    </div>
+                </div>
+            </div>
         </section>
+
+        <!-- Add Review schema markup for testimonials (sample reviews) -->
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "ItemList",
+            "itemListElement": [
+                {
+                    "@type": "Review",
+                    "author": {"@type": "Person", "name": "Rebecca K."},
+                    "reviewBody": "Maria was great with my pup! She is a great communicator, arrives on time and shared some really nice photos. She left our house super clean. Would absolutely recommend and we hope that she will care for our dog again in the future!",
+                    "reviewRating": {"@type": "Rating", "ratingValue": "5"},
+                    "itemReviewed": {"@type": "Service", "name": "House Sitting"}
+                },
+                {
+                    "@type": "Review",
+                    "author": {"@type": "Person", "name": "Ally M."},
+                    "reviewBody": "Maria is the best! She is so reliable, communicative, and truly cares for our dog as if he were her own. We get daily updates and photos, and our dog is always so happy to see her. Highly recommend!",
+                    "reviewRating": {"@type": "Rating", "ratingValue": "5"},
+                    "itemReviewed": {"@type": "Service", "name": "Dog Walking"}
+                }
+            ]
+        }
+        </script>
         
         <nav class="back-to-top">
             <a href="#top">Back to Top</a> | <a href="index.html">Return to Home</a>
@@ -279,14 +345,13 @@
                 <div class="social-links">
                     <a href="https://www.rover.com/members/maria-r-experienced-pet-sitter-and-lover/"><i class="fas fa-paw"></i></a>
                     <a href="https://www.instagram.com/pawsitivevibesf/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/profile.php?id=61577826855381" target="_blank"><i class="fab fa-facebook"></i></a>
                     <a href="https://g.co/kgs/JsNr39F" target="_blank"><i class="fas fa-map-marker-alt"></i></a>
                     <a href="https://www.yelp.com/biz/russian-hill-pet-sitting-san-francisco" target="_blank" aria-label="Yelp"><i class="fab fa-yelp"></i></a>
                 </div>
                 <div class="footer-blog-link">
-                    <a href="https://www.rover.com/members/maria-r-experienced-pet-sitter-and-lover/"><i class="fas fa-paw"></i></a>
-                    <a href="https://www.instagram.com/pawsitivevibesf/" target="_blank"><i class="fab fa-instagram"></i></a>
-                    <a href="https://g.co/kgs/JsNr39F" target="_blank"><i class="fas fa-map-marker-alt"></i></a>
-                    <a href="https://www.yelp.com/biz/russian-hill-pet-sitting-san-francisco" target="_blank" aria-label="Yelp"><i class="fab fa-yelp"></i></a>                </div>
+                    <a href="blog.html" class="secondary">Blog</a>
+                </div>
             </div>
         </div>
         <div class="footer-bottom">
